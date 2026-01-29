@@ -26,6 +26,36 @@ public class ArrayAsList {
             this.arr[this.idx]=data;
         }
     }
+    public void addAtBegin(int data){
+        if(size-1==this.idx){
+            System.out.println("Array is Full");
+            return;
+        }
+        else{
+            this.idx++;
+            for(int i=this.idx;i>0;i--){
+                this.arr[i]=this.arr[i-1];
+            }
+            this.arr[0]=data;
+        }
+        System.out.println("Added Successfully");
+    }
+    public void addAtPosition(int data,int pos){
+        if(this.size-1==this.idx){
+            System.out.println("Array is Full");
+            return;
+        }
+        else{
+            this.idx++;
+            for(int i=this.idx;i>pos-1;i--){
+                this.arr[i]=this.arr[i-1];
+            }
+            this.arr[pos-1]=data;
+        }
+        System.out.println("Added Successfully");
+    }
+    //Deleting Method
+    
     //Methods display
     public void display(){
         if(this.idx==-1){
@@ -46,7 +76,10 @@ public class ArrayAsList {
         list.addAtLast(20);
         list.addAtLast(30);
         list.display();
-        list.size();
+        list.addAtBegin(67);
+        list.display();
+        list.addAtPosition(100,2);
+        list.display();
 
         /*ArrayAsList list=new ArrayAsList(10);
         list.addAtLast(10);
