@@ -55,7 +55,42 @@ public class ArrayAsList {
         System.out.println("Added Successfully");
     }
     //Deleting Method
-    
+    public void deleteFromEnd(){
+        if(this.idx==-1){
+            System.out.println("Array is Empty");
+        }
+        else{
+            this.idx--;
+            System.out.println("Deleted Successfully");
+        }
+    }
+    public void deleteFromBegin(){
+        if(this.idx==-1){
+            System.out.println("Array is Empty");
+        }
+        else{
+            int data = this.arr[0];
+            for(int i=0;i<this.idx-1;i++){
+                this.arr[i]=this.arr[i+1];
+            }
+            this.idx--;
+            System.out.println("Deleted Successfully and Deleted Element is "+data);
+        }
+    }
+    public void deleteFromPosition(int pos){
+        if(this.idx==-1){
+            System.out.println("Array is Empty");
+        }
+        else{
+            int data=this.arr[pos-1];
+            for(int i=pos-1;i<=this.idx-1;i++){
+                this.arr[i]=this.arr[i+1];
+            }
+            this.idx--;
+            System.out.println("Deleted Successfully and Deleted Element is "+data);
+        }
+        
+    }
     //Methods display
     public void display(){
         if(this.idx==-1){
@@ -79,6 +114,12 @@ public class ArrayAsList {
         list.addAtBegin(67);
         list.display();
         list.addAtPosition(100,2);
+        list.display();
+        list.deleteFromEnd();
+        list.display();
+        list.deleteFromBegin();
+        list.display();
+        list.deleteFromPosition(2);
         list.display();
 
         /*ArrayAsList list=new ArrayAsList(10);
