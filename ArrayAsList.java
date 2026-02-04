@@ -2,6 +2,8 @@ public class ArrayAsList {
     // Data Members
     private int size;
     private int arr[];
+    private int arr2[] = { 6, 7, 8, 9, 10 };
+    private int arr3[];
     private int idx;
 
     // Using Default Constructor
@@ -72,7 +74,7 @@ public class ArrayAsList {
             System.out.println("Array is Empty");
         } else {
             int data = this.arr[0];
-            for (int i = 0; i < this.idx - 1; i++) {
+            for (int i = 0; i < this.idx; i++) {
                 this.arr[i] = this.arr[i + 1];
             }
             this.idx--;
@@ -125,11 +127,55 @@ public class ArrayAsList {
         System.out.println("Size of Array " + this.size);
     }
 
+    // Merge two arrays
+    public void merge() {
+        this.arr3 = new int[arr.length + arr2.length];
+        for (int i = 0; i < arr.length; i++) {
+            this.arr3[i] = this.arr[i];
+        }
+
+        for (int i = 0; i < arr2.length; i++) {
+            this.arr3[i + arr.length] = this.arr2[i];
+        }
+        System.err.println("\nArray after merging");
+
+        for (int i = 0; i < arr3.length; i++) {
+            System.out.print(arr3[i]+" | ");
+        }
+    }
+
+    public void sortedMerge(){
+        //Using Bubble Sort
+        this.arr3 = new int[arr.length + arr2.length];
+        for (int i = 0; i < arr.length; i++) {
+            this.arr3[i] = this.arr[i];
+        }
+
+        for (int i = 0; i < arr2.length; i++) {
+            this.arr3[i + arr.length] = this.arr2[i];
+        }
+
+        for(int i=0;i<this.arr3.length-1;i++){
+            for(int j=0;j<this.arr3.length-i-1;j++){
+                if(this.arr3[j]>this.arr3[j+1]){
+                    int temp=this.arr3[j];
+                    this.arr3[j]=this.arr3[j+1];
+                    this.arr3[j+1]=temp;
+                }
+            }
+        }
+        System.err.println("\nArray after merging");
+    }
+    //Rotation
+
     public static void main(String[] args) {
         ArrayAsList list = new ArrayAsList();
         list.addAtLast(10);
         list.addAtLast(20);
-        list.addAtLast(100);
+        list.addAtLast(30);
+        list.addAtLast(40);
+        list.addAtLast(50);
+        // list.addAtLast(100);
         list.display();
         // list.addAtBegin(67);
         // list.display();
@@ -141,7 +187,10 @@ public class ArrayAsList {
         // list.display();
         // list.deleteFromPosition(2);
         // list.display();
-        list.search(100);
+        // list.search(100);
+
+        list.merge();
+        // list.display();
 
         /*
          * ArrayAsList list=new ArrayAsList(10);
