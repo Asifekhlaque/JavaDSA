@@ -1,1 +1,2 @@
-list.display();
+obj.dequeue();
+        // obj.display();
