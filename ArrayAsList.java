@@ -166,6 +166,35 @@ public class ArrayAsList {
         }
         System.err.println("\nArray after merging");
     }
+    void reverse(){
+        if(idx==-1){
+            System.out.println("Array is Empty");
+            return;
+        }
+        else{
+            for(int i=idx;i>=0;i--){
+        System.out.println(arr[i]+" | ");
+        }
+        
+    }
+    }
+
+    int sumOfAllElements(){
+        int sum=0;
+        if(idx==-1){
+            System.out.println("Array is Empty");
+            return 0;
+        }
+        else{
+            for(int i=0;i<=idx;i++){
+                sum+=arr[i];
+            }
+            return sum;
+        }
+        
+    }
+    
+
     //Rotation
 
     public static void main(String[] args) {
@@ -176,7 +205,7 @@ public class ArrayAsList {
         list.addAtLast(40);
         list.addAtLast(50);
         // list.addAtLast(100);
-        list.display();
+        // list.display();
         // list.addAtBegin(67);
         // list.display();
         // list.addAtPosition(100,2);
@@ -189,8 +218,11 @@ public class ArrayAsList {
         // list.display();
         // list.search(100);
 
-        list.merge();
+        // list.merge();
         // list.display();
+
+        list.reverse();
+        System.out.println("\nSum of all elements "+list.sumOfAllElements());
 
         /*
          * ArrayAsList list=new ArrayAsList(10);
