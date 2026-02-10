@@ -178,6 +178,23 @@ public class LinkedList {
                 }
                 temp=temp.next;
             }
+            System.out.println("Key not found");
+        }
+    }
+
+    boolean search(int key){
+        if(this.head==null){
+            return false;
+        }
+        else{
+            Node temp=this.head;
+            while (temp.next!=null) {
+                if(temp.data==key){
+                    return true;
+                }
+                temp=temp.next;
+            }
+            return false;
         }
     }
 
@@ -191,21 +208,24 @@ public class LinkedList {
 
         list.display();
 
-        System.out.println("Modify at Begin");
-        list.modifyNodeAtBegin(100);
-        list.display();
+        // System.out.println("Modify at Begin");
+        // list.modifyNodeAtBegin(100);
+        // list.display();
 
-        System.out.println("Modify at End");
-        list.modifyNodeAtEnd(2000);
-        list.display();
+        // System.out.println("Modify at End");
+        // list.modifyNodeAtEnd(2000);
+        // list.display();
 
-        System.out.println("Modify At Any Position");
-        list.modifyAtAnyPosition(3000, 3);
-        list.display();
+        // System.out.println("Modify At Any Position");
+        // list.modifyAtAnyPosition(3000, 3);
+        // list.display();
 
-        System.out.println("Modify Existing With New Key");
-        list.modifyExistingWithNewKey(20, 2000);
-        list.display();
+        // System.out.println("Modify Existing With New Key");
+        // list.modifyExistingWithNewKey(90, 800);
+        // list.display();
+
+        System.out.println("Search Element");
+        System.out.println(list.search(800));
 
         // LinkedList list2 = new LinkedList();
         // list2.addNodeAtBegin(100);
