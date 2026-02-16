@@ -38,6 +38,24 @@ public class LinkedList {
     }
 
     void addNodeAtPosition(int data, int pos) {
+        if(this.head==null){
+            this.head=new Node(data);
+            return;
+        }
+        else{
+            Node temp=this.head;
+            int cnt=0;
+            while (temp.next!=null) {
+                if(cnt==pos-1){
+                    break;
+                }
+                temp=temp.next;
+                cnt++;
+            }
+            Node newNode=new Node(data);
+            newNode.next=temp.next;
+            temp.next=newNode;
+        }
 
     }
 
@@ -202,9 +220,9 @@ public class LinkedList {
         LinkedList list = new LinkedList();
         list.addNodeAtBegin(10);
         list.addNodeAtBegin(20);
-        list.addNodeAtEnd(30);
-        list.addNodeAtEnd(40);
-        list.addNodeAtEnd(50);
+        // list.addNodeAtEnd(30);
+        // list.addNodeAtEnd(40);
+        // list.addNodeAtEnd(50);
 
         list.display();
 
@@ -224,8 +242,8 @@ public class LinkedList {
         // list.modifyExistingWithNewKey(90, 800);
         // list.display();
 
-        System.out.println("Search Element");
-        System.out.println(list.search(800));
+        // System.out.println("Search Element");
+        // System.out.println(list.search(800));
 
         // LinkedList list2 = new LinkedList();
         // list2.addNodeAtBegin(100);

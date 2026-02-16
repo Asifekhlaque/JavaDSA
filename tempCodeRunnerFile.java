@@ -1,2 +1,1 @@
-obj.dequeue();
-        // obj.display();
+int data = this.head.data;

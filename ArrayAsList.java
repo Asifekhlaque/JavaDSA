@@ -38,7 +38,7 @@ public class ArrayAsList {
         } else {
             this.idx++;
             for (int i = this.idx; i > 0; i--) {
-                this.arr[i] = this.arr[i - 1];
+                this.arr[i] = this.arr[i + 1];
             }
             this.arr[0] = data;
         }
@@ -73,12 +73,12 @@ public class ArrayAsList {
         if (this.idx == -1) {
             System.out.println("Array is Empty");
         } else {
-            int data = this.arr[0];
+            // int data = this.arr[0];
             for (int i = 0; i < this.idx; i++) {
                 this.arr[i] = this.arr[i + 1];
             }
             this.idx--;
-            System.out.println("Deleted Successfully and Deleted Element is " + data);
+            // System.out.println("Deleted Successfully and Deleted Element is " + data);
         }
     }
 
