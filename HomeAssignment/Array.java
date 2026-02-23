@@ -75,7 +75,7 @@ public class Array {
         }
     }
 
-    //8.	Second Largest
+    //5.	Second Largest
 
     void secondLargest(){
         int arr[]={1,4,2,3,5};
@@ -99,6 +99,59 @@ public class Array {
         }
         System.out.println("Second largest number is "+max2);
     }
+    // 6.	Max Consecutive Ones
+    void maxOnes(){
+        int arr[]={0,1,1,0,0,0,1,1,1,1,0};
+        int max=0;
+        int cnt=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==1){
+                cnt++;
+            }
+            else{
+                cnt=0;
+            }
+            if(cnt>max){
+                max=cnt;
+            }
+        }
+        System.out.println("Max Consecutive Ones are "+max);
+    }
+
+    // 7.	Check if Sorted Array
+    void checkSorted(){
+        int arr[]={5,4,3,2,1};
+        boolean asc=true;
+        boolean desc=true;
+        for(int i=0;i<arr.length-1;i++){
+            //desc
+            if(arr[i]>arr[i+1]){
+                asc=false;
+            }
+            //asc
+            if(arr[i]<arr[i+1]){
+                desc=false;
+            }
+        }
+        if (asc) {
+            System.out.println("Array is Sorted in Ascending Order");
+        } else if (desc) {
+            System.out.println("Array is Sorted in Descending Order");
+        } else {
+            System.out.println("Array is not Sorted");
+        }
+        
+    }
+    //8.	Two Sum
+
+    void twoSum(int target){
+        int arr[]={1,2,3,4,5};
+        for(int i=0;i<arr.length-1;i++){
+            if(arr[i]+arr[i+1]==target){
+                System.out.println("Pair is "+arr[i]+" "+arr[i+1]);
+            }
+        }
+    }
 
     //9.	Merge Sorted Arrays
 
@@ -121,33 +174,17 @@ public class Array {
         }
     }
 
-    void rotate(){
-        int arr[]={1,2,3,4,5};
-        int data=arr[arr.length-1];
-        int temp=arr[0];
-        for(int i=1;i<arr.length-2;i++){
-            arr[i]=arr[i+1];
-        }
-        arr[arr.length-1]=temp;
-        arr[0]=data;
-        
-        for(int i=0;i<arr.length;i++){
-            System.out.println(arr[i]);
-        }
-    }
-
-
-
-
 
     public static void main(String[] args) {
         Array obj=new Array();
         //obj.FindMissingNumber();
         //obj.ReverseAnArray();
-        // obj.secondLargest();
+        //obj.secondLargest();
         // obj.MergeSortedArrays();
         // obj.rotate();
         //obj.moveZeroes();
-        obj.removeDuplicates();
+        //obj.removeDuplicates();
+        //obj.checkSorted();
+        obj.twoSum(5);
     }
 }
