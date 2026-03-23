@@ -1,1 +1,1 @@
-int data = this.head.data;
+list.display();
